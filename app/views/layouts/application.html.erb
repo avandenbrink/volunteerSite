@@ -14,7 +14,9 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li><%= link_to 'New Status', new_status_path, class: 'btn' %></li>
 				<li class="dropdown">
-		          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profile <b class="caret"></b></a>
+		          <%= link_to new_user_session_path, class: 'btn dropdown-toggle', :'data-toggle' => 'dropdown' do %> 
+		          	Sign In <b class="caret"></b>
+		          <% end %>
 		          <ul class="dropdown-menu">
 		            <li><a href="/statuses">Statuses</a></li>
 		            <li><a href="#">Groups</a></li>
@@ -29,6 +31,8 @@
 		</div>
 	</nav>
 	<div class="container">
+		<p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
 		<%= yield %>
 	</div>
 </body>

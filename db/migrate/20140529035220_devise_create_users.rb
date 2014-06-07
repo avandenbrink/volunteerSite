@@ -2,6 +2,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
   def change
     create_table(:users) do |t|
 
+      ## User information
       t.string :first_name
       t.string :last_name
       t.string :profile_name 
