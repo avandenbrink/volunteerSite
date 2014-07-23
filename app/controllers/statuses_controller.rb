@@ -15,6 +15,7 @@ class StatusesController < ApplicationController
   # GET /statuses/new
   def new
     @status = Status.new
+    @status.user_id = current_user.id
   end
 
   # GET /statuses/1/edit
@@ -69,6 +70,6 @@ class StatusesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def status_params
-      params.require(:status).permit(:name, :content)
+      params.require(:status).permit(:content, :user_id )
     end
 end

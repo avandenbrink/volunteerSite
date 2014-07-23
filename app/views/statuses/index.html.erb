@@ -6,7 +6,7 @@
 
 <% @statuses.each do |status| %>
   <div class="panel panel-default">
-    <p class="panel-heading">Created on <%= status.created_at %></p>
+    <p class="panel-heading">by <%= status.user.full_name %></p>
     <p><%= status.content %></p>
     <p><a><%= link_to 'Show', status %></a> | 
     <a><%= link_to 'Edit', edit_status_path(status) %></a> | 
